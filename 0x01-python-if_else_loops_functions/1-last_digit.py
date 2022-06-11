@@ -1,30 +1,17 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
+#!/usr/bin/python3
+import random
+number = random.randint(-10000, 10000)
 
-/**
- * main - Determines either greater than 5, is less than 6, or is 0
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	int n, l;
+if number >= 0:
+    l_digit = number % 10
+else:
+    l_digit = number % -10
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	l = n % 10;
-	if (l > 5)
-	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, l);
-	}
-	else if (l == 0)
-	{
-		printf("Last digit of %d is %d and is 0\n", n, l);
-	}
-	else
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, l);
-	}
-	return (0);
-}
+print("Last digit of {} is {}".format(number, l_digit), end='')
+
+if l_digit > 5:
+    print(" and is greater than 5")
+elif l_digit == 0:
+    print(" and is 0")
+else:
+    print(" and is less than 6 and not 0")
